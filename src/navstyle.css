@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+ .nav-link {
+    margin-right: 2vw; /* Adjust the value as needed */
+    font-family: Montserrat  ;
+
+  }
+ 
+  .custom-navbar .nav-link {
+    position: relative;
+    text-decoration: none;
+  }
+  .nav-link:hover{
+    color: #1280c4  !important;
+  }
+  .custom-navbar {
+    position: fixed;
+   z-index: 100;
+   background-color: rgb(255, 255, 255);
+   border-bottom: #1280c4 1px solid;
+ 
+  }
+  .ourlogo{
+    height: 70px;
+    width: 100px;
+    box-shadow: none;
+    background-color: none;
+  }

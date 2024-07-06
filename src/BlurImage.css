@@ -1,0 +1,42 @@
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .image {
+    width: 300px;
+    height: 200px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .blurred {
+    filter: blur(10px);
+    transform: scale(1);
+  }
+  
+  .clear {
+    filter: blur(0);
+    transform: scale(2);
+  }
+  
+  .blurred-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .blurred-button:hover {
+    background-color: #c82333;
+  }
+  
